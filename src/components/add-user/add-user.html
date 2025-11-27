@@ -1,9 +1,28 @@
+<div class="card-container">
 <mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title> Australian Shepherd</mat-card-title>
-    <mat-card-subtitle>Herding group</mat-card-subtitle>
+  <mat-card-header class="card-header">
+    <mat-card-title > Add Users</mat-card-title>
   </mat-card-header>
+  <mat-card-content>
+    <div class="flex">
+      <div>
+        <mat-form-field class="example-form-field">
+  <mat-label>Clearable input</mat-label>
+  <input matInput type="text" [(ngModel)]="value">
+  @if (value) {
+    <button matSuffix matIconButton aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</mat-form-field>
+      </div>
+      <div class="add-user-btn" >
+    <button matButton="elevated">Add User</button>
+
+      </div>
+    </div>
+  </mat-card-content>
   <mat-card-actions>
-    <button matButton>Learn More</button>
   </mat-card-actions>
 </mat-card>
+</div>
