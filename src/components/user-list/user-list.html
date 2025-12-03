@@ -1,4 +1,8 @@
+<div class = "center-align">
 <app-add-user (userAdded) ="onUserAdded($event)" ></app-add-user>
-<ol>
-  <li *ngFor="let user of users">{{ user }}</li>
+<ol class= "list-align">
+  <li *ngFor="let user of users">
+    {{user}}
+  </li>
 </ol>
+</div>

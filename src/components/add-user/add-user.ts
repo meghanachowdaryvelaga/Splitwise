@@ -17,7 +17,7 @@ value='';
 @Output() userAdded= new EventEmitter<string>();
 addUser(){
   const name=this.value.trim();
-  if(name.length === 0){
+  if(!name){
     alert("Please add user to proceed");
     return;
   }
