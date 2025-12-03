@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,4 +14,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddUser {
 value='';
+@Output() userAdded= new EventEmitter<string>();
+addUser(){
+  const name=this.value.trim();
+  if(name.length === 0){
+    alert("Please add user to proceed");
+    return;
+  }
+  this.userAdded.emit(name);
+  this.value = '';
+}
 }
