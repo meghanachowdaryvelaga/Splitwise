@@ -1,0 +1,10 @@
+.center-align {
+display:flex;
+align-items: center;
+flex-direction: column;
+}
+.list-align {
+  text-align: left;
+  margin-top: 10px;
+  width: 300px;
+}
