@@ -1,10 +1,17 @@
-.center-align {
-display:flex;
-align-items: center;
-flex-direction: column;
+.user-card{
+  width: 400px;
+  margin: 40px;
 }
-.list-align {
-  text-align: left;
+.title-center{
   margin-top: 10px;
-  width: 300px;
+  justify-content: center;
+}
+.center-align {
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+.value-align{
+  text-align: left;
+  width: 100%;
 }
