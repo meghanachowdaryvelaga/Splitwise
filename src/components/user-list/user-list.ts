@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AddUser } from "../add-user/add-user";
 import { CommonModule } from '@angular/common';
 
@@ -10,9 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./user-list.css'],
 })
 export class UserList {
-  users: string[] = [];
+  @Input() users: string[] = [];
 
-  onUserAdded(userName: string) {
-    this.users.push(userName);
-  }
 }
