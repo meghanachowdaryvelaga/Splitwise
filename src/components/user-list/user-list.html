@@ -1,8 +1,13 @@
-<div class = "center-align">
+<mat-card class="user-card">
+  <mat-card-header class="title-center">
+    <mat-card-title>Add Users</mat-card-title>
+  </mat-card-header>
+<mat-card-content class = "center-align">
 <app-add-user (userAdded) ="onUserAdded($event)" ></app-add-user>
-<ol class= "list-align">
+<ol class="value-align">
   <li *ngFor="let user of users">
     {{user}}
   </li>
 </ol>
-</div>
+</mat-card-content>
+</mat-card>
