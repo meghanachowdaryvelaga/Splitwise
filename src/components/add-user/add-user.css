@@ -1,6 +1,16 @@
+.user-card{
+  width: 400px;
+  margin: 40px auto;
+}
 .center-align{
   display: flex;
-  padding: 20px;        
+  padding: 40px; 
+  align-items: center;
+  flex-direction:column;      
+}
+.title-center{
+  margin-top: 10px;
+  justify-content: center;
 }
 .flex-parent{
   display: flex;
