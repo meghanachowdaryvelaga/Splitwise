@@ -1,1 +1,8 @@
-<p>home-page works!</p>
+<div class="home-page-container">
+  <div>
+    <app-add-user (userAdded)="onUserAdded($event)"></app-add-user>
+  </div> 
+  <div>
+    <app-user-list [users]="user"></app-user-list>
+  </div>
+</div>
