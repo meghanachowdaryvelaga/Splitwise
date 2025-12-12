@@ -12,10 +12,12 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePage
+    loadComponent: () =>
+      import('../components/home-page/home-page')
+     .then(m => m.HomePage)
   },
   {
     path: '**',
-    redirectTo: 'homepage'
+    redirectTo: 'home'
   }
 ];
