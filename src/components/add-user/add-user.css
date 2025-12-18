@@ -14,14 +14,14 @@
 }
 .flex-parent{
   display: flex;
+  padding: 35px;
+  flex-direction: row;
+  gap: 20px;
   align-items: center;
 }
 .example-form-field {
-  height: 70px;
   width: 200px;
- padding: 30px;
 }
 .example-button-row{
   white-space: nowrap;
-  padding-bottom :20px;
 }
