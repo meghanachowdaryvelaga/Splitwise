@@ -5,23 +5,30 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { UserInterface } from '../../models/user.interface';
 
 @Component({
   selector: 'app-add-user',
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule,MatInputModule],
+  standalone: true,
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule, MatInputModule],
   templateUrl: './add-user.html',
-  styleUrl: './add-user.css',
+  styleUrls: ['./add-user.css'],
 })
 export class AddUser {
 value='';
-@Output() userAdded= new EventEmitter<string>();
+@Output() userAdded= new EventEmitter<UserInterface>();
 addUser(){
   const name=this.value.trim();
   if(!name){
     alert("Please add user to proceed");
     return;
   }
-  this.userAdded.emit(name);
+  const user:UserInterface={
+    name:name,
+    youOwe:0,
+    owesToYou:0
+  };
+  this.userAdded.emit(user);
   this.value = '';
 }
 }
