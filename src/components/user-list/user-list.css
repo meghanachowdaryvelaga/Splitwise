@@ -1,5 +1,4 @@
-.value-align{ 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.table-container{
+  max-height: 450px;
+  overflow-x: auto;
 }

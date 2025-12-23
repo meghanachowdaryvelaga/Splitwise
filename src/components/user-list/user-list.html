@@ -1,8 +1,4 @@
-<ol class="value-align">
-  <li *ngFor="let user of users">
-    {{user.name}},{{user.youOwe}},{{user.owesToYou}}
-  </li>
-</ol>
+<div class="table-container">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Position Column -->
@@ -32,3 +28,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>

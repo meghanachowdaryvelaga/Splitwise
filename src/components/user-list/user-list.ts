@@ -4,23 +4,6 @@ import { CommonModule } from '@angular/common';
 import { UserInterface } from '../../models/user.interface';
 import { MatTableModule } from '@angular/material/table';
 
-@Component({
-  selector: 'app-user-list',
-  standalone: true,
-  imports: [CommonModule, MatTableModule],
-  templateUrl: './user-list.html',
-  styleUrls: ['./user-list.css'],
-})
-export class UserList {
-  @Input() users: UserInterface[] = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-
-  onUserAdded(username: UserInterface) {
-    this.users.push(username);
-  }
-}
-
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -40,3 +23,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'}
 ];
+
+@Component({
+  selector: 'app-user-list',
+  standalone: true,
+  imports: [CommonModule, MatTableModule],
+  templateUrl: './user-list.html',
+  styleUrls: ['./user-list.css'],
+})
+export class UserList {
+  @Input() users: UserInterface[] = [];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = ELEMENT_DATA;
+
+  onUserAdded(username: UserInterface) {
+    this.users.push(username);
+  }
+}
