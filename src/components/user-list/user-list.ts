@@ -6,22 +6,22 @@ import { MatTableModule } from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  srNo: number;
+  youOwe: number;
+  owesToYou: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'}
+  {srNo: 1, name: 'Hydrogen', youOwe: 1.0079, owesToYou: 'H'},
+  {srNo: 2, name: 'Helium', youOwe: 4.0026, owesToYou: 'He'},
+  {srNo: 3, name: 'Lithium', youOwe: 6.941, owesToYou: 'Li'},
+  {srNo: 4, name: 'Beryllium', youOwe: 9.0122, owesToYou: 'Be'},
+  {srNo: 5, name: 'Boron', youOwe: 10.811, owesToYou: 'B'},
+  {srNo: 6, name: 'Carbon', youOwe: 12.0107, owesToYou: 'C'},
+  {srNo: 7, name: 'Nitrogen', youOwe: 14.0067, owesToYou: 'N'},
+  {srNo: 8, name: 'Oxygen', youOwe: 15.9994, owesToYou: 'O'},
+  {srNo: 9, name: 'Fluorine', youOwe: 18.9984, owesToYou: 'F'},
+  {srNo: 10, name: 'Neon', youOwe: 20.1797, owesToYou: 'Ne'}
 ];
 
 @Component({
@@ -33,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class UserList {
   @Input() users: UserInterface[] = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['srNo', 'name', 'youOwe', 'owesToYou'];
   dataSource = ELEMENT_DATA;
 
   onUserAdded(username: UserInterface) {
