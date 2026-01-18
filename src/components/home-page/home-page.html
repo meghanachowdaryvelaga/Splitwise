@@ -3,12 +3,12 @@
     <app-add-user (userAdded)="onUserAdded($event)"></app-add-user>
   </div> 
   <mat-tab-group>
-  <mat-tab label="Add Expenses"> Add Expenses</mat-tab>
+  <mat-tab label="Add Expenses" > <app-add-expenses [data]="'Add Expenses'"></app-add-expenses></mat-tab>
   <mat-tab label="User List">
     <div>
     <app-user-list [users]="user"></app-user-list>
   </div></mat-tab>
-  <mat-tab label="Content-3"> Content 3 </mat-tab>
+  <mat-tab label="Content-3"> <app-add-expenses [data]="'Content-3'"></app-add-expenses> </mat-tab>
 </mat-tab-group>
   </div>
   
