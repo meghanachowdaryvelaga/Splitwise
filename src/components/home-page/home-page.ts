@@ -4,11 +4,12 @@ import { AddUser } from "../add-user/add-user";
 import { UserInterface } from '../../models/user.interface';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
+import { AddExpenses } from "../add-expenses/add-expenses";
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [UserList, AddUser, MatTabsModule],
+  imports: [UserList, AddUser, MatTabsModule, AddExpenses],
   templateUrl: './home-page.html',
   styleUrls: ['./home-page.css'],
 })

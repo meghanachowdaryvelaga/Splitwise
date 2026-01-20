@@ -6,11 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { UserInterface } from '../../models/user.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-user',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule, MatInputModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule, MatInputModule,CommonModule],
   templateUrl: './add-user.html',
   styleUrls: ['./add-user.css'],
 })
