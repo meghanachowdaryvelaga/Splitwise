@@ -7,11 +7,12 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { UserInterface } from '../../models/user.interface';
 import { CommonModule } from '@angular/common';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-add-user',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule, MatInputModule,CommonModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule, MatInputModule,CommonModule, MatCheckboxModule],
   templateUrl: './add-user.html',
   styleUrls: ['./add-user.css'],
 })
