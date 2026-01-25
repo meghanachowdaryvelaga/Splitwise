@@ -11,3 +11,4 @@ export class FeatureInfo implements OnInit {
     this.element.nativeElement.innerText = this.infoText +" coming soon";
   }
 }
+
