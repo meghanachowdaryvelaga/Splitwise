@@ -20,11 +20,13 @@ export class HomePage {
   disableAddExpensesTab:boolean=false;
   user: UserInterface[] = [];
   disableTab:boolean=false;
+  title = 'Splitwise';
   constructor( public sharedService: SharedService){}
   ngOnInit(){
     // this.sharedService.isAddExpensesTabDisabled.subscribe((res)=>{ 
     //   this.disableTab=res;
     // })
+    this.sharedService.applicationTitle.next(this.title);
   }
   onUserAdded(username: UserInterface) {
     this.user.push(username);

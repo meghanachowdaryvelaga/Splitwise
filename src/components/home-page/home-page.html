@@ -1,4 +1,5 @@
 <div class="home-page-container">
+  <h6 class="align">{{sharedService.applicationTitle | async}}</h6>
   <div style="text-align: right">
     <mat-checkbox [(ngModel)]="disableAddExpensesTab"(change)="onClickCheckboxChange($event)">Disable add expenses tab</mat-checkbox>
   </div>
