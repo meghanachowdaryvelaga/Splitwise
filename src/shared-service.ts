@@ -6,5 +6,5 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class SharedService {
   isAddExpensesTabDisabled = new Subject<boolean>();
-  applicationTitle = new BehaviorSubject<string>('');
+  applicationTitle = new BehaviorSubject<string>('Splitwise');
 }
