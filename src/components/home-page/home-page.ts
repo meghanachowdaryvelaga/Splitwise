@@ -25,7 +25,7 @@ export class HomePage {
     // this.sharedService.isAddExpensesTabDisabled.subscribe((res)=>{ 
     //   this.disableTab=res;
     // })
-    this.sharedService.applicationTitle.next(this.sharedService.applicationTitle.value);
+    // this.sharedService.applicationTitle.next(this.sharedService.applicationTitle.value);
   }
   onUserAdded(username: UserInterface) {
     this.user.push(username);
