@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, signal } from '@angular/core';
 import { AddUser } from "../add-user/add-user";
 import { CommonModule } from '@angular/common';
 import { UserInterface } from '../../models/user.interface';
@@ -17,22 +17,19 @@ import { takeUntil } from 'rxjs/operators';
 export class UserList implements OnInit,OnDestroy {
   @Input() users: UserInterface[] = [];
   displayedColumns: string[] = ['srNo', 'name', 'youOwe', 'owesToYou'];
-  dataSource: PeriodicElement[] = [];
+  dataSource= signal<PeriodicElement[]>([]);
   destroy$ = new Subject<void>();
 
   constructor(private sharedService: SharedService) {}
   
   ngOnInit(){
-    console.log('subscribing to getData()');
     this.sharedService.getData().pipe(takeUntil(this.destroy$)).subscribe((res)=>{
-      console.log('received data', res);
-      this.dataSource=res;
+      this.dataSource.set(res);
     });
   }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-    console.log('user-list: ngOnDestroy - emitting destroy$');
   }
   
   onUserAdded(username: UserInterface) {
