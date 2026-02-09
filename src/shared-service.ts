@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-export interface PeriodicElement {
+export interface UserDetails {
   name: string;
   srNo: number;
   youOwe: number;
@@ -17,8 +17,11 @@ export class SharedService {
   applicationTitle = new BehaviorSubject<string>('Splitwise');
   constructor( private http: HttpClient){ 
   }
-  getData(): Observable<PeriodicElement[]> {
-    return this.http.get<PeriodicElement[]>("http://localhost:3000/getusers")
+  getData(): Observable<UserDetails[]> {
+    return this.http.get<UserDetails[]>("http://localhost:3000/users")
+  }
+  postData(data: UserDetails) {
+    return this.http.post("http://localhost:3000/users", data);
   }
 }
 
