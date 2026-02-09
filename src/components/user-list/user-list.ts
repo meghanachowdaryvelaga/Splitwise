@@ -1,11 +1,10 @@
-import { Component, Input, OnDestroy, OnInit, signal } from '@angular/core';
-import { AddUser } from "../add-user/add-user";
 import { CommonModule } from '@angular/common';
-import { UserInterface } from '../../models/user.interface';
+import { Component, Input, OnChanges, OnDestroy, OnInit, signal, SimpleChanges } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { SharedService, PeriodicElement } from '../../shared-service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { UserInterface } from '../../models/user.interface';
+import { SharedService, UserDetails } from '../../shared-service';
 
 @Component({
   selector: 'app-user-list',
@@ -14,15 +13,23 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './user-list.html',
   styleUrls: ['./user-list.css'],
 })
-export class UserList implements OnInit,OnDestroy {
+export class UserList implements OnInit,OnDestroy, OnChanges{
   @Input() users: UserInterface[] = [];
+  @Input() isDataUpdated:boolean=false;
   displayedColumns: string[] = ['srNo', 'name', 'youOwe', 'owesToYou'];
-  dataSource= signal<PeriodicElement[]>([]);
+  dataSource= signal<UserDetails[]>([]);
   destroy$ = new Subject<void>();
 
   constructor(private sharedService: SharedService) {}
-  
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['isDataUpdated'].currentValue){
+      this.getData();
+  }
+}
   ngOnInit(){
+this.getData();
+  }
+  getData(){
     this.sharedService.getData().pipe(takeUntil(this.destroy$)).subscribe((res)=>{
       this.dataSource.set(res);
     });
@@ -31,6 +38,7 @@ export class UserList implements OnInit,OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
+  
   
   onUserAdded(username: UserInterface) {
     this.users.push(username);
