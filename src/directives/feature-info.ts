@@ -1,6 +1,7 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
+  standalone: true,
   selector: '[appFeatureInfo]'
 })
 export class FeatureInfo implements OnInit {

@@ -1,0 +1,28 @@
+<h5 mat-dialog-title class="dialog-title">Add Expenses</h5>
+<mat-dialog-content>
+<p class="dialog-subtitle">Enter the details of the expenses you want to add.</p>
+<form>
+    <mat-form-field appearance="outline" class="form-width">
+        <mat-label>Expense Name</mat-label>
+        <input matInput placeholder="Enter expense name">
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="form-width">
+        <mat-label>Amount</mat-label>
+        <input matInput placeholder="Enter amount" [value]="0" type="number">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-width">
+        <mat-label>Paid By</mat-label>
+        <mat-select>
+            <mat-option value="user1">User 1</mat-option>
+            <mat-option value="user2">User 2</mat-option>
+            <mat-option value="user3">User 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+<button mat-button (click)="close()">Cancel</button>
+<button mat-button (click)="close()">Add</button>
+</mat-dialog-actions>
