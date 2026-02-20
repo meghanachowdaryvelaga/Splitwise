@@ -11,3 +11,7 @@
   justify-content: center;
   gap: 20px;
 }
+.divider{
+  width: 20%;
+  border-left: 1px solid #110e0e;
+}
