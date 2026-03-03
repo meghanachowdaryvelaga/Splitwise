@@ -12,8 +12,14 @@ import { HomePage } from "../components/home-page/home-page";
   styleUrl: './app.css'
 })
 export class App implements OnInit{
+  name = 'Angular';
   ngOnInit(): void {
-    
+  this.name = this.getName();
   }
+  
     protected readonly title = signal('Splitwise');
+    getName(){
+      return this.title();
+    }
+    
 }
