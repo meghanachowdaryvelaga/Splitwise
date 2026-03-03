@@ -1,0 +1,27 @@
+.user-card{
+  width: 400px;
+  margin: 40px auto;
+}
+.center-align{
+  display: flex;
+  padding: 40px; 
+  align-items: center;
+  flex-direction:column;      
+}
+.title-center{
+  margin-top: 10px;
+  justify-content: center;
+}
+.flex-parent{
+  display: flex;
+  padding: 35px;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.example-form-field {
+  width: 200px;
+}
+.example-button-row{
+  white-space: nowrap;
+}

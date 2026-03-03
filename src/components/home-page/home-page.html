@@ -3,8 +3,15 @@
   <div style="text-align: right">
     <mat-checkbox [(ngModel)]="disableAddExpensesTab"(change)="onClickCheckboxChange($event)">Disable add expenses tab</mat-checkbox>
   </div>
-  <div>
-    <app-add-user (userAdded)="onUserAdded($event)"></app-add-user>
+  <div class ="cards-container">
+    <div>
+      <app-add-group></app-add-group>
+    </div>
+    <div class="divider">
+    </div>
+    <div>
+      <app-add-user (userAdded)="onUserAdded($event)"></app-add-user>
+    </div>
   </div>
   <mat-tab-group>
   <mat-tab label="Add Expenses" [disabled]="(sharedService.isAddExpensesTabDisabled|async)"> <app-add-expenses [data]="'Add Expenses'"></app-add-expenses></mat-tab>

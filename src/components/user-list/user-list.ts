@@ -19,6 +19,8 @@ export class UserList implements OnInit,OnDestroy, OnChanges{
   displayedColumns: string[] = ['srNo', 'name', 'youOwe', 'owesToYou'];
   dataSource= signal<UserDetails[]>([]);
   destroy$ = new Subject<void>();
+  isLoad  = signal(true);
+  counter = 0;
 
   constructor(private sharedService: SharedService) {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -31,7 +33,13 @@ this.getData();
   }
   getData(){
     this.sharedService.getData().pipe(takeUntil(this.destroy$)).subscribe((res)=>{
+      if(res.length>0){
       this.dataSource.set(res);
+      this.isLoad.set(false);
+      }
+    },(error) =>{
+      console.error('Error fetching data:', error);
+      this.isLoad.set(false);
     });
   }
   ngOnDestroy(): void {

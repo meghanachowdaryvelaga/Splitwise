@@ -8,11 +8,12 @@ import { AddExpenses } from "../add-expenses/add-expenses";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SharedService, UserDetails } from '../../shared-service';
 import { AsyncPipe } from '@angular/common';
+import { AddGroup } from '../add-group/add-group';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [UserList, AddUser, MatTabsModule, AddExpenses,  MatCheckboxModule, FormsModule, AsyncPipe],
+  imports: [UserList, AddUser, MatTabsModule, AddExpenses, AddGroup, MatCheckboxModule, FormsModule, AsyncPipe],
   templateUrl: './home-page.html',
   styleUrls: ['./home-page.css'],
 })
